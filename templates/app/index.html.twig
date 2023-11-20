@@ -3,5 +3,12 @@
 {% block title %}Resultats - {{ data.tournoi_name }}{% endblock %}
 
 {% block body %}
-    
+    <div>
+        <h1>{{ data.tournoi_name }}</h1>
+        {% for equipe in data.equipes %}
+        <div>
+            <p>{{ equipe.name }} => {{ equipe.victories_nb }} Victoire(s)</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
