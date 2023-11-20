@@ -2,7 +2,6 @@
 
 namespace App\Tests;
 
-use App\Controller\AppController;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 final class DataCollectTest extends KernelTestCase
