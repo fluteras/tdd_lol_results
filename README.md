@@ -18,4 +18,4 @@ Pour se faire nous avons réalisé le MLD suivant :
 - **Score/KDA**: calcul basé sur les statistiques Kill Deaths Assists.
       La formule est la suivante : **KDA = ( 5 x Kills - 3 * Deaths + 2 * Assists)**
 
-Le détail des tests unitaires est disponible dans le fichier  [suivant](TESTS UNITAIRES.pdf)
+Le détail des tests unitaires est disponible dans le fichier  [suivant](TESTS_UNITAIRES.pdf)
