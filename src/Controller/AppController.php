@@ -15,4 +15,12 @@ class AppController extends AbstractController
             'controller_name' => 'AppController',
         ]);
     }
+    public function calculkda($kills,$deaths,$assists): void
+    {
+        
+    }
+    public function calculNbVictoires(): void
+    {
+        
+    }
 }
