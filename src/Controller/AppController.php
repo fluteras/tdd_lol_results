@@ -10,6 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AppController extends AbstractController
 {
+    #[Route('/app', name: 'app_app')]
+    public function index(): Response
+    {
+        return $this->render('app/index.html.twig', [
+            'controller_name' => 'AppController',
+        ]);
+    }
     #[Route('/results', name: 'app_show_result')]
     public function showResults(): Response
     {
