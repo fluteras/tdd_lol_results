@@ -21,6 +21,9 @@ class Roster
     #[ORM\OneToMany(mappedBy: 'Roster_ID', targetEntity: RosterMatchs::class)]
     private Collection $hasMatchs;
 
+    #[ORM\ManyToOne(inversedBy: 'hasRoster')]
+    private ?Equipe $Equipe_ID = null;
+
     public function __construct()
     {
         $this->HasPlayer = new ArrayCollection();
@@ -88,6 +91,18 @@ class Roster
                 $hasMatch->setRosterID(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getEquipeID(): ?Equipe
+    {
+        return $this->Equipe_ID;
+    }
+
+    public function setEquipeID(?Equipe $Equipe_ID): static
+    {
+        $this->Equipe_ID = $Equipe_ID;
 
         return $this;
     }
