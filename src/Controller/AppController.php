@@ -15,11 +15,11 @@ class AppController extends AbstractController
             'controller_name' => 'AppController',
         ]);
     }
-    public function calculkda($kills,$deaths,$assists): void
+    static public function calculkda($kills,$deaths,$assists): void
     {
         
     }
-    public function calculNbVictoires(): void
+    static public function calculNbVictoires(): void
     {
         
     }
