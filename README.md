@@ -1,12 +1,12 @@
-# tdd_lol_results
-
 # Qualité Logicielle - Etude du cas Esport
-
 ## Annexe 4 : extrait de résultats d’un événement
 
 Le projet a pour but d'afficher les résultats d'un tournoi de League of Legends.
 
 dans le format suivant : 
+
+
+
 ![Format de retour.](FormatRetour.png)
 
 Pour se faire nous avons réalisé le MLD suivant :
