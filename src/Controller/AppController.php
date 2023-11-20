@@ -11,10 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     #[Route('/results', name: 'app_show_result')]
-    public function showResults(TestRepository $testRepository): Response
+    public function showResults(): Response
     {
-        // get data from bdd
-        $results = $testRepository->findBy(['id' => 2]);
 
         if($results === [])
         {

@@ -2,16 +2,24 @@
 
 namespace App\Tests;
 
-use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpKernel\KernelInterface;
-use function PHPUnit\Framework\assertFileExists;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class DataCollectTest extends TestCase
+final class DataCollectTest extends KernelTestCase
 {
+    private $fileName = 'Match1LyonData';   // nom fichier
+    // private $kernel = self::bootKernel();   // kernel
 
-    public function testFileExist(KernelInterface $kernel): void
+    public function testFileExist(): void
     {
-        $filePath = $kernel->getProjectDir().'var/data/'.$filename;
+        $kernel = self::bootKernel();   // kernel
+
+        // get path to our file
+        $filePath = $kernel->getProjectDir()."\\var\\data\\$this->fileName.json";
         $this->assertFileExists($filePath, "The file is not found");
+    }
+
+    public function testFileNotExist(): void
+    {
+        
     }
 }
