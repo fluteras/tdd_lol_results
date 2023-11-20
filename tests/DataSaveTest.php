@@ -15,26 +15,20 @@ final class DataSaveTest extends TestCase
     // Vérification calcul KDA ( 5*kill - 3*death + 2*assist )
     public function testCalculKDA1(): void
     {
-        // Case : 
-        // 12 kills
-        // 4 deaths
-        // 5 assists
+        // Case : 12 kills 4 deaths 5 assists
 
         $this->assertEquals(AppController::calculkda(12,4,5),(12*5-3*4+2*5));
 
     }
     public function testCalculKDA2(): void	
     {
-        // case :
-        // 1 kills
-        // 9 deaths
-        // 0 assists
+        // case : 1 kills 9 deaths 0 assists
 
         $this->assertEquals(AppController::calculkda(1,9,0),(1*5-3*9+0*5));
 
     }
     // Résultats Calcul Nombre de Victoires
-    public function testNbVictoires1(): void
+    public function testNbVictoires3Victories(): void
     {
     // CREATION DU DATASET
     $tournoi = new Tournoi();
@@ -66,7 +60,7 @@ final class DataSaveTest extends TestCase
     $this->assertEquals(AppController::calculNbVictoires($tournoi,$equipe),3);
     }
 
-    public function testNbVictoires2(): void
+    public function testNbVictoires1Victory(): void
     {
     // CREATION DU DATASET
     $tournoi = new Tournoi();
@@ -87,7 +81,7 @@ final class DataSaveTest extends TestCase
     $ResultatMatch2-> setRosterID($roster1->getId());
     $ResultatMatch2-> setMatchsID($match2->getId());
     $ResultatMatch2-> setVictorieux(true);
-    //VICTOIRE #3
+    //MATCH #3
     $match3 = new Matchs();
     $match3 ->setTournoiID($tournoi->getId());
     $ResultatMatch3 = new RosterMatchs();
