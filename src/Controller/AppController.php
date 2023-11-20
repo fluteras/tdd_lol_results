@@ -8,17 +8,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-use function PHPUnit\Framework\throwException;
-
 class AppController extends AbstractController
 {
     #[Route('/results', name: 'app_show_result')]
     public function showResults(TestRepository $testRepository): Response
     {
         // get data from bdd
-        $data = $testRepository->findBy(['id' => 2]);
+        $results = $testRepository->findBy(['id' => 2]);
 
-        if($data === [])
+        if($results === [])
         {
             throw new Exception("Erreur, les données recherchées n'existent pas.");
         }
@@ -27,13 +25,8 @@ class AppController extends AbstractController
 
         return $this->render('app/index.html.twig', [
             'controller_name' => 'AppController',
+            'data' => $results,
         ]);
-    }
-
-    // test 1 : empty data = return message
-    public function testDataMatchEmpty()
-    {
-
     }
 
 }
